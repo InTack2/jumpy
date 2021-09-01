@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using System.Windows.Input;
-using Microsoft.VisualStudio.Text;
+﻿using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
+using System.Linq;
+using System.Windows.Input;
 
 namespace Jumpy
 {
@@ -80,12 +80,12 @@ namespace Jumpy
         private bool IsHotKey()
         {
             // TODO: get from plugin options
-            return Keyboard.IsKeyDown(Key.LeftShift) && Keyboard.IsKeyDown(Key.RightShift);
+            return Keyboard.IsKeyDown(Key.LeftShift) && Keyboard.IsKeyDown(Key.Enter);
         }
 
         private static bool Escape(KeyEventArgs args)
         {
-            Key[] keys = { Key.Escape, Key.Left, Key.Right, Key.Up, Key.Down, Key.Enter };
+            Key[] keys = { Key.Escape, Key.Left, Key.Right, Key.Up, Key.Down };
             return keys.Contains(args.Key) || keys.Contains(args.SystemKey);
         }
     }
